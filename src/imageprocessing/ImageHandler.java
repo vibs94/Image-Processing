@@ -33,7 +33,7 @@ public class ImageHandler {
     
     public void evolveImage(Image image){
         image.setId(images.size());
-        System.out.println(image.getId());
+        //System.out.println(image.getId());
         images.add(image);
     }
     
@@ -45,10 +45,7 @@ public class ImageHandler {
         if(current==0){
             return null;
         }
-        
-        Image newImage = images.get(current-1);
-        evolveImage(newImage);
-        return getImage();
+        return images.get(current-1);
     }
     
     public Image redo(int current){

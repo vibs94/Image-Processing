@@ -1,6 +1,7 @@
 package imageprocessing;
 
 import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -11,6 +12,7 @@ import java.util.Collections;
 public class Filter {
     
     public Image meanFilter(Image image){
+        BufferedImage bufferedImage = new BufferedImage(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight(), BufferedImage.TYPE_INT_RGB);
         for(int i=1;i<image.getBufferedImage().getWidth()-1;i++){
             for(int j=1;j<image.getBufferedImage().getHeight()-1;j++){
                 Color color; 
@@ -31,14 +33,16 @@ public class Filter {
                 int green = convolu(greens);
                 int blue = convolu(blues);
                 Color newColor = new Color(red,green,blue);
-                image.getBufferedImage().setRGB(i, j, newColor.getRGB());
+                bufferedImage.setRGB(i, j, newColor.getRGB());
             }
         }
-        return image;
+        Image returnImage = new Image(bufferedImage);
+        return returnImage;
         
     }
     
     public Image midFilter(Image image){
+        BufferedImage bufferedImage = new BufferedImage(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight(), BufferedImage.TYPE_INT_RGB);
         ArrayList<Integer> reds;
         ArrayList<Integer> greens;
         ArrayList<Integer> blues;
@@ -65,10 +69,11 @@ public class Filter {
                 int green = greens.get(greens.size()/2);
                 int blue = blues.get(blues.size()/2);
                 Color newColor = new Color(red,green,blue);
-                image.getBufferedImage().setRGB(i, j, newColor.getRGB());
+                 bufferedImage.setRGB(i, j, newColor.getRGB());
             }
         }
-        return image;
+        Image returnImage = new Image(bufferedImage);
+        return returnImage;
     }
     
     private int convolu(int[][] a){

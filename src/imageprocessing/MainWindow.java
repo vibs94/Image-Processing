@@ -46,30 +46,42 @@ public class MainWindow extends javax.swing.JFrame {
         txt_fileLocation = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         lbl_image = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel2 = new javax.swing.JPanel();
+        btn_flip = new javax.swing.JButton();
+        btn_ro_anti = new javax.swing.JButton();
+        btn_ro_clock = new javax.swing.JButton();
+        btn_negative = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        jLabel1 = new javax.swing.JLabel();
+        btn_redu = new javax.swing.JButton();
+        btn_add = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        btn_mean = new javax.swing.JButton();
+        btn_mid = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        btn_prew = new javax.swing.JButton();
+        combo_prew = new javax.swing.JComboBox();
+        btn_sobel = new javax.swing.JButton();
+        btn_lap = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox();
+        txt_tr = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         btn_dither = new javax.swing.JButton();
         btn_nearest = new javax.swing.JButton();
         combo_scale_ne = new javax.swing.JComboBox();
         combo_state_ne = new javax.swing.JComboBox();
         btn_linear = new javax.swing.JButton();
-        combo_state_li = new javax.swing.JComboBox();
         txt_scale = new javax.swing.JTextField();
-        btn_ro_anti = new javax.swing.JButton();
-        btn_ro_clock = new javax.swing.JButton();
-        btn_flip = new javax.swing.JButton();
-        btn_negative = new javax.swing.JButton();
-        btn_redu = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        btn_add = new javax.swing.JButton();
-        btn_mean = new javax.swing.JButton();
-        btn_mid = new javax.swing.JButton();
-        btn_prew = new javax.swing.JButton();
-        combo_prew = new javax.swing.JComboBox();
-        txt_tr = new javax.swing.JTextField();
-        btn_sobel = new javax.swing.JButton();
-        btn_lap = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        combo_state_li = new javax.swing.JComboBox();
+        jLabel3 = new javax.swing.JLabel();
+        lbl_message = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1300, 794));
+        setMinimumSize(new java.awt.Dimension(1300, 794));
+        setPreferredSize(new java.awt.Dimension(1300, 794));
 
         btn_open.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btn_open.setText("Open");
@@ -99,6 +111,237 @@ public class MainWindow extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(lbl_image);
 
+        btn_flip.setText("Flip");
+        btn_flip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_flipActionPerformed(evt);
+            }
+        });
+
+        btn_ro_anti.setText("Rotate Anti Clock");
+        btn_ro_anti.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ro_antiActionPerformed(evt);
+            }
+        });
+
+        btn_ro_clock.setText("Rotate Clock");
+        btn_ro_clock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ro_clockActionPerformed(evt);
+            }
+        });
+
+        btn_negative.setText("Digital Negative");
+        btn_negative.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_negativeActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Brightness");
+
+        btn_redu.setText("-");
+        btn_redu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_reduActionPerformed(evt);
+            }
+        });
+
+        btn_add.setText("+");
+        btn_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_redu)
+                .addGap(13, 13, 13)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_add)
+                .addContainerGap())
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_redu)
+                    .addComponent(jLabel1)
+                    .addComponent(btn_add))
+                .addGap(0, 0, 0))
+        );
+        jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btn_redu, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(btn_add, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_flip)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btn_negative, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btn_ro_anti, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_ro_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btn_flip)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_ro_anti)
+                    .addComponent(btn_ro_clock))
+                .addGap(26, 26, 26)
+                .addComponent(btn_negative)
+                .addGap(18, 18, 18)
+                .addComponent(jLayeredPane1)
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Point-operations", jPanel2);
+
+        btn_mean.setText("Mean Filter");
+        btn_mean.setToolTipText("");
+        btn_mean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_meanActionPerformed(evt);
+            }
+        });
+
+        btn_mid.setText("Medium Filter");
+        btn_mid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_midActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(114, 114, 114)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_mid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_mean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(138, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(btn_mean)
+                .addGap(50, 50, 50)
+                .addComponent(btn_mid)
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Filter         ", jPanel3);
+
+        btn_prew.setText("Prewwitt");
+        btn_prew.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_prewActionPerformed(evt);
+            }
+        });
+
+        combo_prew.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Horizontal", "Verticle" }));
+
+        btn_sobel.setText("Sobel");
+        btn_sobel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sobelActionPerformed(evt);
+            }
+        });
+
+        btn_lap.setText("Laplasian");
+        btn_lap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_lapActionPerformed(evt);
+            }
+        });
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+
+        txt_tr.setMaximumSize(new java.awt.Dimension(69, 22));
+        txt_tr.setMinimumSize(new java.awt.Dimension(69, 22));
+
+        jLabel2.setText("Threshold");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(combo_prew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(btn_lap)
+                                .addGap(52, 52, 52)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 140, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btn_sobel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_prew, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txt_tr, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(btn_prew)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(combo_prew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(btn_sobel)
+                        .addGap(30, 30, 30))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txt_tr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addGap(21, 21, 21)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_lap)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("edge Detection", jPanel4);
+
         btn_dither.setText("Dither");
         btn_dither.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,97 +367,65 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        combo_state_li.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Up", "Down" }));
-
         txt_scale.setMaximumSize(new java.awt.Dimension(69, 22));
         txt_scale.setMinimumSize(new java.awt.Dimension(69, 22));
 
-        btn_ro_anti.setText("Rotate Anti Clock");
-        btn_ro_anti.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ro_antiActionPerformed(evt);
-            }
-        });
+        combo_state_li.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Up", "Down" }));
 
-        btn_ro_clock.setText("Rotate Clock");
-        btn_ro_clock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ro_clockActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("Scale");
 
-        btn_flip.setText("Flip");
-        btn_flip.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_flipActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_dither)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_nearest)
+                                .addGap(0, 13, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btn_linear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txt_scale, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(combo_scale_ne, 0, 69, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(combo_state_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(40, 40, 40))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(btn_dither)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_nearest)
+                    .addComponent(combo_scale_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_state_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_linear)
+                    .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
 
-        btn_negative.setText("Digital Negative");
-        btn_negative.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_negativeActionPerformed(evt);
-            }
-        });
+        jTabbedPane1.addTab("Re-sampling", jPanel1);
 
-        btn_redu.setText("-");
-        btn_redu.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_reduActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setText("Brightness");
-
-        btn_add.setText("+");
-        btn_add.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_addActionPerformed(evt);
-            }
-        });
-
-        btn_mean.setText("Mean Filter");
-        btn_mean.setToolTipText("");
-        btn_mean.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_meanActionPerformed(evt);
-            }
-        });
-
-        btn_mid.setText("Medium Filter");
-        btn_mid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_midActionPerformed(evt);
-            }
-        });
-
-        btn_prew.setText("Prewwitt");
-        btn_prew.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_prewActionPerformed(evt);
-            }
-        });
-
-        combo_prew.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Horizontal", "Verticle" }));
-
-        txt_tr.setMaximumSize(new java.awt.Dimension(69, 22));
-        txt_tr.setMinimumSize(new java.awt.Dimension(69, 22));
-
-        btn_sobel.setText("Sobel");
-        btn_sobel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_sobelActionPerformed(evt);
-            }
-        });
-
-        btn_lap.setText("Laplasian");
-        btn_lap.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_lapActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "+", "-" }));
+        lbl_message.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lbl_message.setMaximumSize(new java.awt.Dimension(350, 80));
+        lbl_message.setMinimumSize(new java.awt.Dimension(350, 80));
+        lbl_message.setPreferredSize(new java.awt.Dimension(350, 80));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,68 +435,29 @@ public class MainWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_open)
+                                .addGap(27, 27, 27)
+                                .addComponent(txt_fileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_undo)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btn_redo)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_dither)
+                        .addGap(24, 24, 24)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTabbedPane1)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btn_linear)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btn_nearest)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(combo_scale_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(45, 45, 45)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(combo_state_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_ro_anti)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_ro_clock))
-                            .addComponent(btn_flip)
-                            .addComponent(btn_negative)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_redu)
-                                .addGap(13, 13, 13)
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_add))
-                            .addComponent(btn_mean)
-                            .addComponent(btn_mid)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btn_sobel)
-                                    .addComponent(btn_prew)
-                                    .addComponent(btn_lap))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(combo_prew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txt_tr, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(10, 10, 10))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_open)
-                        .addGap(27, 27, 27)
-                        .addComponent(txt_fileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_undo)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_redo)))
-                .addContainerGap(72, Short.MAX_VALUE))
+                                .addComponent(lbl_message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_open)
                     .addComponent(txt_fileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -293,58 +465,16 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_undo)
                     .addComponent(btn_redo))
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn_dither)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_nearest)
-                            .addComponent(combo_scale_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(combo_state_ne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_linear)
-                            .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_ro_anti)
-                            .addComponent(btn_ro_clock))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(39, 39, 39)
-                        .addComponent(btn_flip)
-                        .addGap(34, 34, 34)
-                        .addComponent(btn_negative)
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_redu)
-                            .addComponent(jLabel1)
-                            .addComponent(btn_add))
-                        .addGap(39, 39, 39)
-                        .addComponent(btn_mean)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_mid)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_prew)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addComponent(btn_sobel))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(combo_prew, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(18, 18, 18))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_tr, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(5, 5, 5)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn_lap)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(33, 33, 33))
+                        .addComponent(lbl_message, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(62, 62, 62))
         );
 
         pack();
@@ -352,7 +482,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_openActionPerformed
         // TODO add your handling code here:
-        JFileChooser fileChoser = new JFileChooser("C:\\Windows\\Web\\Screen");
+        JFileChooser fileChoser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(".png","jpeg","jpg");
         fileChoser.setFileFilter(filter);
         if(fileChoser.showOpenDialog(this)==JFileChooser.APPROVE_OPTION){
@@ -373,10 +503,15 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_ditherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ditherActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         Sampling sampling = new Sampling();
         Image newImage = sampling.dither(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_ditherActionPerformed
 
     private void btn_undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_undoActionPerformed
@@ -390,6 +525,9 @@ public class MainWindow extends javax.swing.JFrame {
             setImage(newImage);
         }   
         }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
         
     }//GEN-LAST:event_btn_undoActionPerformed
 
@@ -401,10 +539,16 @@ public class MainWindow extends javax.swing.JFrame {
                 setImage(newImage);
             }
         }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_redoActionPerformed
 
     private void btn_nearestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_nearestActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
+            
+        
         Sampling sampling = new Sampling();
         int scale = (int) Math.pow(2,combo_scale_ne.getSelectedIndex()+1);
         String state = "down";
@@ -414,11 +558,17 @@ public class MainWindow extends javax.swing.JFrame {
         Image newImage = sampling.nearestNeibour(imageHandler.getImage(),scale,state);
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_nearestActionPerformed
 
     private void btn_linearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_linearActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         Sampling sampling = new Sampling();
+        try{
         double scale = Double.parseDouble(txt_scale.getText());
         String state = "down";
         if(combo_state_li.getSelectedIndex()==0){
@@ -426,120 +576,202 @@ public class MainWindow extends javax.swing.JFrame {
         }
         Image newImage = sampling.linearIn(imageHandler.getImage(),scale,state);
         imageHandler.evolveImage(newImage);
+        }
+        catch(Exception e){
+            lbl_message.setText("Scale should be a decimal!!!!");
+        }
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_linearActionPerformed
 
     private void btn_ro_antiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ro_antiActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.rotateAnti(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_ro_antiActionPerformed
 
     private void btn_ro_clockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ro_clockActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.rotateClock(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_ro_clockActionPerformed
 
     private void btn_flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_flipActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.flip(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_flipActionPerformed
 
     private void btn_negativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_negativeActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.negative(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_negativeActionPerformed
 
     private void btn_reduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reduActionPerformed
         // TODO add your handling code here:
        
         //System.out.println(briVal);
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.bright(imageHandler.getImage(),-2);
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_reduActionPerformed
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
        
         //System.out.println(briVal);
+        if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.bright(imageHandler.getImage(),2);
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_addActionPerformed
 
     private void btn_meanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_meanActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         Filter filter = new Filter();
         Image newImage = filter.meanFilter(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_meanActionPerformed
 
     private void btn_midActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_midActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         Filter filter = new Filter();
         Image newImage = filter.midFilter(imageHandler.getImage());
         imageHandler.evolveImage(newImage);
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_midActionPerformed
 
     private void btn_prewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prewActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "h";
         if(combo_prew.getSelectedIndex()==1){
             state="v";
         }
+         try{
         int tr = Integer.valueOf(txt_tr.getText());
-        Image newImage = edgeDetection.prewwitt(imageHandler.getImage(), state,tr);
+        Image newImage = edgeDetection.laplasian(imageHandler.getImage(), state,tr);
         imageHandler.evolveImage(newImage);
+        }
+        catch(NumberFormatException e){
+            lbl_message.setText("Threshold should be an integer!!!!");
+            
+        }
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_prewActionPerformed
 
     private void btn_sobelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sobelActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "h";
         if(combo_prew.getSelectedIndex()==1){
             state="v";
         }
+         try{
         int tr = Integer.valueOf(txt_tr.getText());
-        Image newImage = edgeDetection.sobel(imageHandler.getImage(), state,tr);
+        Image newImage = edgeDetection.laplasian(imageHandler.getImage(), state,tr);
         imageHandler.evolveImage(newImage);
+        }
+        catch(NumberFormatException e){
+            lbl_message.setText("Threshold should be an integer!!!!");
+            
+        }
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_sobelActionPerformed
 
     private void btn_lapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lapActionPerformed
         // TODO add your handling code here:
+        if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "+";
         if(combo_prew.getSelectedIndex()==1){
             state="-";
         }
+        try{
         int tr = Integer.valueOf(txt_tr.getText());
         Image newImage = edgeDetection.laplasian(imageHandler.getImage(), state,tr);
         imageHandler.evolveImage(newImage);
+        }
+        catch(NumberFormatException e){
+            lbl_message.setText("Threshold should be an integer!!!!");
+            
+        }
+        
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_lapActionPerformed
     
 
     private void setImage(Image image){
         currentImage = image.getId();
-        //System.out.println(currentImage);
+        System.out.println(currentImage);
         lbl_image.setSize(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight());
         
         lbl_image.setIcon(new ImageIcon(image.getBufferedImage()));
@@ -603,8 +835,17 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JComboBox combo_state_ne;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lbl_image;
+    private javax.swing.JLabel lbl_message;
     private javax.swing.JTextField txt_fileLocation;
     private javax.swing.JTextField txt_scale;
     private javax.swing.JTextField txt_tr;
