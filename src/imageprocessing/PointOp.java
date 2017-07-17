@@ -64,6 +64,24 @@ public class PointOp {
         
     }
      
+     public Image grayLevetImage(Image image){
+         BufferedImage bufferedImage = new BufferedImage(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight(), BufferedImage.TYPE_INT_RGB);
+        
+         for(int i=0;i<bufferedImage.getWidth();i++){
+            for(int j=0;j<bufferedImage.getHeight();j++){
+                //System.out.println(String.valueOf(j)+" "+String.valueOf(i)+" "+String.valueOf(j)+" "+String.valueOf(image.getBufferedImage().getWidth()-1-i)+" ");
+                Color color = new Color(image.getBufferedImage().getRGB(i, j));
+                int grayVal= (color.getRed()+ color.getGreen()+color.getBlue())/3;
+                Color newColour = new Color(grayVal,grayVal,grayVal);
+                        
+                bufferedImage.setRGB(i, j, newColour.getRGB());
+                
+            }
+        }
+        Image returnImage = new Image(bufferedImage);
+        return returnImage;
+     }
+     
      public Image bright(Image image,int bri){
          //System.out.println(""+bri);
         BufferedImage bufferedImage = new BufferedImage(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight(), BufferedImage.TYPE_INT_RGB);

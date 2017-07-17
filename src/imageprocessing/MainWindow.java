@@ -56,6 +56,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btn_redu = new javax.swing.JButton();
         btn_add = new javax.swing.JButton();
+        btn_grey = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         btn_mean = new javax.swing.JButton();
         btn_mid = new javax.swing.JButton();
@@ -184,6 +185,14 @@ public class MainWindow extends javax.swing.JFrame {
         jLayeredPane1.setLayer(btn_redu, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(btn_add, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
+        btn_grey.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btn_grey.setText("Gray Level");
+        btn_grey.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_greyActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -202,7 +211,10 @@ public class MainWindow extends javax.swing.JFrame {
                                 .addComponent(btn_ro_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(btn_grey)))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -214,10 +226,12 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_ro_anti)
                     .addComponent(btn_ro_clock))
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addComponent(btn_negative)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btn_grey)
                 .addContainerGap())
         );
 
@@ -256,7 +270,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(btn_mean)
                 .addGap(50, 50, 50)
                 .addComponent(btn_mid)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Filter         ", jPanel3);
@@ -339,7 +353,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_lap)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Edge Detection", jPanel4);
@@ -419,7 +433,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Re-sampling", jPanel1);
@@ -494,8 +508,8 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 635, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
-                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
                         .addComponent(lbl_message, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(62, 62, 62))
         );
@@ -809,8 +823,14 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_originalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_originalActionPerformed
         // TODO add your handling code here:
+         lbl_message.setText("");
+        if(currentImage>-1){
         imageHandler.evolveImage(imageHandler.getOriginal());
         setImage(imageHandler.getImage());
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
     }//GEN-LAST:event_btn_originalActionPerformed
 
     private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
@@ -838,6 +858,20 @@ public class MainWindow extends javax.swing.JFrame {
              lbl_message.setText("Select the Image!!!!");
          }
     }//GEN-LAST:event_btn_saveActionPerformed
+
+    private void btn_greyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_greyActionPerformed
+        // TODO add your handling code here:
+        lbl_message.setText("");
+        if(currentImage>-1){
+            PointOp pointOp = new PointOp();
+            Image newImage = pointOp.grayLevetImage(imageHandler.getImage());
+            imageHandler.evolveImage(newImage);
+            setImage(imageHandler.getImage()); 
+        }
+        else{
+            lbl_message.setText("Select the Image!!!!");
+        }
+    }//GEN-LAST:event_btn_greyActionPerformed
     
 
     private void setImage(Image image){
@@ -886,6 +920,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btn_add;
     private javax.swing.JButton btn_dither;
     private javax.swing.JButton btn_flip;
+    private javax.swing.JButton btn_grey;
     private javax.swing.JButton btn_lap;
     private javax.swing.JButton btn_linear;
     private javax.swing.JButton btn_mean;
