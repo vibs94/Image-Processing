@@ -66,7 +66,7 @@ public class EdgeDetection {
         BufferedImage bufferedImage = new BufferedImage(image.getBufferedImage().getWidth(), image.getBufferedImage().getHeight(), BufferedImage.TYPE_INT_RGB);
         for(int i=1;i<image.getBufferedImage().getWidth()-1;i++){
             for(int j=1;j<image.getBufferedImage().getHeight()-1;j++){
-                Color color;
+                Color color=null;
                 int[][] colors = new int[3][3];
                 for(int m=i-1;m<i+2;m++){
                     for(int n=j-1;n<j+2;n++){
@@ -79,7 +79,7 @@ public class EdgeDetection {
                 }
                 if(Math.abs(marixMul(colors, ed, 3))>tr){
                     //System.out.println(Math.abs(marixMul(colors, ed, 3)));
-                    bufferedImage.setRGB(i, j, new Color(0,0,0).getRGB());
+                    bufferedImage.setRGB(i, j, new Color(color.getRed(),color.getGreen(),color.getBlue()).getRGB());
                 }
                 else{
                     //System.out.println(Math.abs(marixMul(colors, ed, 3)));

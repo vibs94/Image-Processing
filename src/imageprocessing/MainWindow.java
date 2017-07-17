@@ -78,6 +78,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         lbl_message = new javax.swing.JLabel();
         btn_original = new javax.swing.JButton();
+        btn_save = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1300, 794));
@@ -202,7 +203,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +247,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btn_mid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btn_mean, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(238, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +256,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(btn_mean)
                 .addGap(50, 50, 50)
                 .addComponent(btn_mid)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Filter         ", jPanel3);
@@ -306,7 +307,7 @@ public class MainWindow extends javax.swing.JFrame {
                                 .addComponent(btn_lap)
                                 .addGap(52, 52, 52)
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 140, Short.MAX_VALUE))
+                        .addGap(0, 240, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -338,7 +339,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_lap)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Edge Detection", jPanel4);
@@ -387,7 +388,7 @@ public class MainWindow extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_nearest)
-                                .addGap(0, 13, Short.MAX_VALUE))
+                                .addGap(0, 113, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btn_linear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -418,7 +419,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Re-sampling", jPanel1);
@@ -433,6 +434,13 @@ public class MainWindow extends javax.swing.JFrame {
         btn_original.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_originalActionPerformed(evt);
+            }
+        });
+
+        btn_save.setText("Save Image");
+        btn_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_saveActionPerformed(evt);
             }
         });
 
@@ -454,7 +462,9 @@ public class MainWindow extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_redo)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_original)))
+                                .addComponent(btn_original)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_save)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -476,7 +486,8 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_undo)
                     .addComponent(btn_redo)
-                    .addComponent(btn_original))
+                    .addComponent(btn_original)
+                    .addComponent(btn_save))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -492,6 +503,9 @@ public class MainWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    File file;
+    
     private void btn_openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_openActionPerformed
         // TODO add your handling code here:
         lbl_message.setText("");
@@ -499,7 +513,7 @@ public class MainWindow extends javax.swing.JFrame {
         FileNameExtensionFilter filter = new FileNameExtensionFilter(".png","jpeg","jpg");
         fileChoser.setFileFilter(filter);
         if(fileChoser.showOpenDialog(this)==JFileChooser.APPROVE_OPTION){
-            File file = fileChoser.getSelectedFile();
+            file = fileChoser.getSelectedFile();
             String fileName = file.getPath();
             txt_fileLocation.setText(fileName);
             
@@ -798,6 +812,32 @@ public class MainWindow extends javax.swing.JFrame {
         imageHandler.evolveImage(imageHandler.getOriginal());
         setImage(imageHandler.getImage());
     }//GEN-LAST:event_btn_originalActionPerformed
+
+    private void btn_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_saveActionPerformed
+        // TODO add your handling code here:
+         lbl_message.setText("");
+         if(currentImage>-1){
+        JFileChooser fileChoser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter(".png","jpeg","jpg");
+        fileChoser.setFileFilter(filter);
+        if(fileChoser.showOpenDialog(this)==JFileChooser.APPROVE_OPTION){
+            file = fileChoser.getSelectedFile();
+        File newImagePath = new File(file.toString() + ".png");
+        if(imageHandler.saveImage(newImagePath)){
+            lbl_message.setText("Image saved successfully");
+        }
+        else{
+            lbl_message.setText("Image saving failed!");
+        }
+        }
+        else{
+            
+        }
+         }
+         else{
+             lbl_message.setText("Select the Image!!!!");
+         }
+    }//GEN-LAST:event_btn_saveActionPerformed
     
 
     private void setImage(Image image){
@@ -859,6 +899,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btn_redu;
     private javax.swing.JButton btn_ro_anti;
     private javax.swing.JButton btn_ro_clock;
+    private javax.swing.JButton btn_save;
     private javax.swing.JButton btn_sobel;
     private javax.swing.JButton btn_undo;
     private javax.swing.JComboBox combo_prew;

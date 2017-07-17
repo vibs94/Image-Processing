@@ -60,8 +60,9 @@ public class ImageHandler {
     }
     
     public boolean saveImage(File file){
+        System.out.println(file.toString());
         try{
-            ImageIO.write(getImage().getBufferedImage(), ".png", file);
+            ImageIO.write(getImage().getBufferedImage(), "png", file);
             return true;
         }
         catch(IOException e){
