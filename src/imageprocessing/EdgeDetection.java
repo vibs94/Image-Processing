@@ -51,18 +51,15 @@ public class EdgeDetection {
         return returnImage;
     }
     
-    public int marixMul(int[][] a,int[][] b, int len,int tr){
+    public int marixMul(int[][] a,int[][] b, int len){
         int ans =0;
         int val=0;
         for(int i=0;i<len;i++){
             for(int j=0;j<len;j++){
                 val=val+a[i][j]*b[i][j];
-                if(Math.abs(val-a[i][j])>tr){
-                  ans=255;  
-                }
             }
         }
-        return ans;
+        return val;
     }
     
     public Image convolute(Image image,int[][] ed,int tr){
@@ -76,14 +73,17 @@ public class EdgeDetection {
                         color = new Color(image.getBufferedImage().getRGB(m, n));
                         //System.out.println((m-i+1)+" "+(n-i+2));
                         colors[m-i+1][n-j+1] = (color.getRed()+color.getGreen()+color.getBlue())/3;
-                        //System.out.println((m-i+(len-1)/2)+" "+(n-i+(len-1)/2)); 
+                        
+                        //System.out.println((color.getRed()+color.getGreen()+color.getBlue())/3 );
                     }
                 }
-                if(marixMul(colors, ed, 3,tr)==255){
-                    bufferedImage.setRGB(i, j, new Color(255,255,255).getRGB());
+                if(Math.abs(marixMul(colors, ed, 3))>tr){
+                    //System.out.println(Math.abs(marixMul(colors, ed, 3)));
+                    bufferedImage.setRGB(i, j, new Color(0,0,0).getRGB());
                 }
                 else{
-                    bufferedImage.setRGB(i, j, new Color(0,0,0).getRGB());
+                    //System.out.println(Math.abs(marixMul(colors, ed, 3)));
+                    bufferedImage.setRGB(i, j, new Color(255,255,255).getRGB());
                 }
                     
             }

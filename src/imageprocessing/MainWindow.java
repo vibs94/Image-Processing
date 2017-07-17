@@ -77,6 +77,7 @@ public class MainWindow extends javax.swing.JFrame {
         combo_state_li = new javax.swing.JComboBox();
         jLabel3 = new javax.swing.JLabel();
         lbl_message = new javax.swing.JLabel();
+        btn_original = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1300, 794));
@@ -254,7 +255,7 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(btn_mean)
                 .addGap(50, 50, 50)
                 .addComponent(btn_mid)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Filter         ", jPanel3);
@@ -337,10 +338,10 @@ public class MainWindow extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_lap)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("edge Detection", jPanel4);
+        jTabbedPane1.addTab("Edge Detection", jPanel4);
 
         btn_dither.setText("Dither");
         btn_dither.addActionListener(new java.awt.event.ActionListener() {
@@ -417,7 +418,7 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(txt_scale, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combo_state_li, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Re-sampling", jPanel1);
@@ -426,6 +427,14 @@ public class MainWindow extends javax.swing.JFrame {
         lbl_message.setMaximumSize(new java.awt.Dimension(350, 80));
         lbl_message.setMinimumSize(new java.awt.Dimension(350, 80));
         lbl_message.setPreferredSize(new java.awt.Dimension(350, 80));
+
+        btn_original.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        btn_original.setText("Original Image");
+        btn_original.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_originalActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -443,7 +452,9 @@ public class MainWindow extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btn_undo)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btn_redo)))
+                                .addComponent(btn_redo)
+                                .addGap(18, 18, 18)
+                                .addComponent(btn_original)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -457,14 +468,15 @@ public class MainWindow extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(16, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_open)
                     .addComponent(txt_fileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_undo)
-                    .addComponent(btn_redo))
+                    .addComponent(btn_redo)
+                    .addComponent(btn_original))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -482,6 +494,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_openActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_openActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         JFileChooser fileChoser = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter(".png","jpeg","jpg");
         fileChoser.setFileFilter(filter);
@@ -503,6 +516,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_ditherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ditherActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         Sampling sampling = new Sampling();
         Image newImage = sampling.dither(imageHandler.getImage());
@@ -516,7 +530,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_undoActionPerformed
         // TODO add your handling code here:
-       
+       lbl_message.setText("");
         if(currentImage>-1){
            // System.out.println("undo");
          Image newImage = imageHandler.undo(currentImage);
@@ -533,6 +547,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_redoActionPerformed
         // TODO add your handling code here:
+       lbl_message.setText("");
         if(currentImage>-1){
             Image newImage = imageHandler.redo(currentImage);
             if(newImage!=null){
@@ -566,6 +581,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_linearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_linearActionPerformed
         // TODO add your handling code here:
+      lbl_message.setText("");
         if(currentImage>-1){
         Sampling sampling = new Sampling();
         try{
@@ -589,6 +605,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_ro_antiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ro_antiActionPerformed
         // TODO add your handling code here:
+       lbl_message.setText("");
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.rotateAnti(imageHandler.getImage());
@@ -602,6 +619,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_ro_clockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ro_clockActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.rotateClock(imageHandler.getImage());
@@ -615,6 +633,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_flipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_flipActionPerformed
         // TODO add your handling code here:
+       lbl_message.setText("");
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.flip(imageHandler.getImage());
@@ -628,6 +647,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_negativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_negativeActionPerformed
         // TODO add your handling code here:
+       lbl_message.setText("");
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
         Image newImage = pointOp.negative(imageHandler.getImage());
@@ -641,7 +661,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_reduActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_reduActionPerformed
         // TODO add your handling code here:
-       
+       lbl_message.setText("");
         //System.out.println(briVal);
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
@@ -656,7 +676,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addActionPerformed
         // TODO add your handling code here:
-       
+       lbl_message.setText("");
         //System.out.println(briVal);
         if(currentImage>-1){
         PointOp pointOp = new PointOp();
@@ -671,6 +691,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_meanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_meanActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         Filter filter = new Filter();
         Image newImage = filter.meanFilter(imageHandler.getImage());
@@ -684,6 +705,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_midActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_midActionPerformed
         // TODO add your handling code here:
+       lbl_message.setText("");
         if(currentImage>-1){
         Filter filter = new Filter();
         Image newImage = filter.midFilter(imageHandler.getImage());
@@ -697,6 +719,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_prewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_prewActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "h";
@@ -721,6 +744,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_sobelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sobelActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "h";
@@ -745,6 +769,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void btn_lapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lapActionPerformed
         // TODO add your handling code here:
+        lbl_message.setText("");
         if(currentImage>-1){
         EdgeDetection edgeDetection = new EdgeDetection();
         String state = "+";
@@ -767,6 +792,12 @@ public class MainWindow extends javax.swing.JFrame {
             lbl_message.setText("Select the Image!!!!");
         }
     }//GEN-LAST:event_btn_lapActionPerformed
+
+    private void btn_originalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_originalActionPerformed
+        // TODO add your handling code here:
+        imageHandler.evolveImage(imageHandler.getOriginal());
+        setImage(imageHandler.getImage());
+    }//GEN-LAST:event_btn_originalActionPerformed
     
 
     private void setImage(Image image){
@@ -822,6 +853,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btn_nearest;
     private javax.swing.JButton btn_negative;
     private javax.swing.JButton btn_open;
+    private javax.swing.JButton btn_original;
     private javax.swing.JButton btn_prew;
     private javax.swing.JButton btn_redo;
     private javax.swing.JButton btn_redu;

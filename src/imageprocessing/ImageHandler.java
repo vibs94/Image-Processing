@@ -55,6 +55,10 @@ public class ImageHandler {
         return images.get(current+1);
     }
     
+    public Image getOriginal(){
+        return images.get(0);
+    }
+    
     public boolean saveImage(File file){
         try{
             ImageIO.write(getImage().getBufferedImage(), ".png", file);
