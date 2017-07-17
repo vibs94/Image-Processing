@@ -211,10 +211,11 @@ public class MainWindow extends javax.swing.JFrame {
                                 .addComponent(btn_ro_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(btn_grey)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(btn_grey))
+                            .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -443,7 +444,7 @@ public class MainWindow extends javax.swing.JFrame {
         lbl_message.setMinimumSize(new java.awt.Dimension(350, 80));
         lbl_message.setPreferredSize(new java.awt.Dimension(350, 80));
 
-        btn_original.setFont(new java.awt.Font("Times New Roman", 0, 13)); // NOI18N
+        btn_original.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btn_original.setText("Original Image");
         btn_original.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,6 +452,7 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        btn_save.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btn_save.setText("Save Image");
         btn_save.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -492,7 +494,7 @@ public class MainWindow extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(16, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_open)
                     .addComponent(txt_fileLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
